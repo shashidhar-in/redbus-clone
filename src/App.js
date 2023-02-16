@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SearchResults from "./components/SearchResults";
+import Home from "./components/Home";
+import { useState } from "react";
+import JourneyContext from "./context/JourneyContext";
+import SeatSelection from "./components/SeatSelection";
+import Journey from "./components/Journey";
+import Login from "./components/Login";
 
 function App() {
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <JourneyContext.Provider
+        value={{
+          from: from,
+          to: to,
+          setFrom: setFrom,
+          setTo: setTo,
+        }}
+      >
+        <BrowserRouter>
+   
+          {/* Show these three things everywhere but after this the content should be shown according to the routes */}
+
+          <Routes>
+            <Route path="/" element={<Journey Component={Home} />} />
+            <Route path="/results" element={<Journey Component={SearchResults} />} />
+            <Route path="/book-seats" element={<Journey Component={SeatSelection} />} />
+            <Route path="/login" element={<Login/>}/>
+          </Routes>
+        </BrowserRouter>
+      </JourneyContext.Provider>
     </div>
   );
 }

@@ -1,0 +1,16 @@
+.seat{
+    background-color: grey;
+    border: 1px solid black;
+    width: 40px !important;
+    height: 40px;
+    margin: 0px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.seat:hover{
+    background: rgb(59, 59, 59);
+    color: aliceblue;
+}
