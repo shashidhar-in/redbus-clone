@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Button, Image, Spinner } from "react-bootstrap";
 import JourneyContext from "../context/JourneyContext";
 import BusResult from "./BusResult";
+import nobus from "../Nobuses.png";
 
 const SearchResults = () => {
   const [buses, setBuses] = useState([]);
@@ -65,7 +66,7 @@ const SearchResults = () => {
       </div>
     )
   } else {
-    return <Image src="https://bustimings.in/wp-content/uploads/2018/02/Nobuses.png"/>
+    return <Image src={nobus}/>
   }
 
 };
