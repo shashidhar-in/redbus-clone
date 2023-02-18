@@ -32,13 +32,13 @@ const Login = () => {
             <Toaster />
             <Container
                 className="d-flex flex-column justify-content-center align-items-center bg-light m-0 mw-100"
-                style={{ height: "100vh" }}
+                style={{ height: "100vh",margin:"10rem" }}
             >
-                <Container className="logincontainer d-flex flex-column justify-content-center align-items-center bg-dark w-50 h-50"
-                style={{padding:"40px"}}
+                <Container className="logincontainer d-flex flex-column justify-content-center align-items-center bg-dark  h-75"
+                style={{padding:"40px",width:"35vw"}}
                 >
-                           <Image src="https://www.redbus.in/i/59538b35953097248522a65b4b79650e.png" className="mb-3 "/>
-                    <h2 className="text-light">Login</h2>
+                           <Image src="https://www.redbus.in/i/59538b35953097248522a65b4b79650e.png" className="mb-5 "/>
+                    <h2 className="text-light mb-5">Login</h2>
                     <Form.Control
                         ref={username}
                         placeholder="Username"
